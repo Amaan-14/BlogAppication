@@ -1,0 +1,547 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@500&display=swap');
+
+:root {
+    --PurpleColor: rgb(207, 159, 255);
+    --PurpleColorV2: #b0009b;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+ 
+}
+html {
+    font-size: 1.125rem!important;
+    /*font-size: 1rem;*/
+    color: black;
+}
+.text-black{
+    color:black!important;
+}
+a{
+    text-decoration:none;
+    color:black;
+    cursor:pointer;
+}
+body{
+  height: 100%;
+  width: 100%;
+}
+
+/* ------Header part-------- */
+/* -----js particles-css---- */
+#particles-js{
+  width: 100%;
+  height: 600px;
+  background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  position: relative;
+}
+
+.h1-head{
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  top: 30%;
+  left: 5%;
+  right: 5%;
+  position: absolute;
+  text-shadow: 2px 2px 4px #575454fa;
+}
+
+.h2-head{
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  top: 40%;
+  left: 5%;
+  right: 5%;
+  position: absolute;
+  text-shadow: 2px 2px 4px #575454fa;
+}
+
+.h2-span {
+    font-size: 2.5rem;
+    color: var(--PurpleColor)
+}
+
+.txt-btn {
+    color: #fff;
+    max-width: 800px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    position: absolute;
+    text-shadow: 2px 2px 4px #575454fa;
+}
+
+h2 span {
+  color: #f6f6f6;
+  position: relative;
+}
+
+h2 span::before {
+  content: "";
+  height: 30px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  background: #BD53ED;
+  transform: translateY(-45%);
+  animation: blink 0.7s infinite;
+}
+
+h2 span.stop-blinking::before {
+  animation: none;
+}
+
+@keyframes blink {
+  50% { opacity: 0 }
+}
+
+/* ------Header part---End----- */
+
+
+/*------ about menu start ----*/
+
+.twelve h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    display: inline-block;
+    white-space: nowrap;
+    padding-bottom: 16px;
+    position: relative;
+    text-transform: uppercase;
+    font-family: "Playfair Display", serif;
+}
+
+    .twelve h1:before {
+        background-color: var(--PurpleColor);
+        content: '';
+        display: block;
+        height: 3px;
+        width: 50%;
+        margin-bottom: 5px;
+    }
+
+    .twelve h1:after {
+        background-color: var(--PurpleColor);
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        width: 50%;
+        margin-bottom: 0.25em;
+    }
+
+.Button-css {
+    background-color: var(--PurpleColor);
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+/*   --------------- About me End----------*/
+
+/* --footer start-- */
+footer {
+    width: 100%;
+    /* position: absolute; */
+    bottom: 0;
+    /* background: linear-gradient(to right, #00093c, #2d0b00); */
+    background: rgb(207,159,255);
+    background: radial-gradient(circle, rgba(207,159,255,1) 0%, rgba(142,36,247,1) 100%);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 15px;
+    line-height: 20px;
+    color: black;
+}
+
+.custom-row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.custom-col {
+    flex-basis: 40%;
+    padding: 10px;
+}
+
+    .custom-col:nth-child(2), .custom-col:nth-child(3) {
+        flex-basis: 25%;
+    }
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.custom-col p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.custom-col h3 {
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.email-id {
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+ul li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.ul-li a {
+    font-size: 1.2rem;
+    margin-left: -30px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.social-icons .fab {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+    background: black;
+    margin: 0 5px 5px 0;
+    cursor: pointer;
+}
+/* --copy-rigt--- */
+hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    margin: 20px auto;
+    font-weight: 500;
+}
+
+.copy-right {
+    text-align: center;
+    font-weight:500;
+    font-size:0.8rem;
+}
+/* --copy-rigt--- */
+
+.underline {
+    width: 100%;
+    height: 5px;
+    /* background: #767676; */
+    background: white;
+    border-radius: 3px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    overflow: hidden;
+}
+
+    .underline span {
+        width: 15px;
+        height: 100%;
+        /* background: #fff; */
+        background: black;
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        animation: moving 2s linear infinite;
+    }
+
+@keyframes moving {
+    0% {
+        left: -20px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@media (max-width:700px) {
+    footer {
+        bottom: unset;
+    }
+
+    .custom-col {
+        flex-basis: 100%;
+        /* padding: 10px; */
+    }
+
+        .custom-col:nth-child(2), .custom-col:nth-child(3) {
+            flex-basis: 100%;
+        }
+}
+
+/* --footer end-- */
+
+
+/*About start*/
+
+/* heading part start */
+.head-part {
+    width: 100%;
+    height: 60vh;
+    background-image: url(https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+}
+/* .txt-title {
+    padding: 100px;
+    text-align: center;
+} */
+.txt-title h1 {
+    font-size: 3rem;
+}
+
+/* heading part end */
+
+
+
+/* story part start */
+.text-center {
+    margin-top: 50px;
+}
+
+    .text-center .row {
+        margin-top: 50px;
+    }
+
+.txt-about {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* max-width: 500px; */
+    text-align: start;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.images {
+    /* width: 500px; */
+    height: 17rem;
+    width: auto;
+    border-radius: 15%;
+    box-shadow: rgb(38, 57, 77) 20px 20px 30px -10px;
+}
+
+.img-border-styling {
+    display: inline-block;
+    transform: rotateZ(15deg);
+    border: 3px red dashed;
+    padding: 10px;
+    border-radius: 15%;
+}
+
+
+.img-border-styling-2 {
+    display: inline-block;
+    transform: rotateZ(-25deg);
+    border: 3px red dashed;
+    padding: 10px;
+    border-radius: 15%;
+}
+/* part 2 of story */
+.text-center2 {
+    margin-top: 50px;
+}
+
+/* story part end */
+
+
+/* scroller Start */
+
+
+
+
+@media only screen and (max-device-width : 640px) {
+    .txt-title h1 {
+        font-size: 2rem;
+    }
+
+    .txt-title button {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        background-color: rgb(158, 171, 185);
+    }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1023px) {
+    .txt-title h1 {
+        font-size: 2rem;
+    }
+
+    .txt-title button {
+        border: none;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        background-color: rgb(158, 171, 185);
+    }
+}
+
+/*About End*/
+
+
+/* ---blog carousal-start--- */
+
+.product-scroller {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.product-list {
+    display: flex !important;
+    flex-wrap: nowrap;
+    overflow-x: scroll !important;
+    scroll-behavior: smooth !important;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /*background-color: #000000;*/
+    background-color: var(--PurpleColor);
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.right {
+    right: 0;
+}
+
+
+.nav-button:hover {
+    background-color: #333;
+}
+
+.product-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.card-custom-css {
+    border-radius: 15px;
+    padding: 10px;
+    width: 18rem !important;
+    flex-shrink: 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+    .card-custom-css img {
+        border-radius: 10px;
+        clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+        height: 15rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+.blog-card-body {
+    height: 10rem;
+    width: 100%;
+}
+
+.card-text{
+    line-height:25px;
+}
+/* ---blog carousal-end--- */
+
+
+
+/*Admin blogs card css*/
+
+.card-Admin-custom-css {
+    border-radius: 15px;
+    padding: 10px;
+    width: 25rem !important;
+    flex-shrink: 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px!important;
+}
+
+.card-Admin-dashboard-css {
+    border-radius: 15px;
+    padding: 20px;
+    width: 18rem !important;
+    flex-shrink: 0 !important;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+    /* background: linear-gradient(to right, #00093c, #2d0b00); */
+    background: rgb(207,159,255);
+    background: radial-gradient(circle, rgba(207,159,255,1) 0%, rgba(142,36,247,1) 100%);
+}
+
+.card-Admin-dashboard-qoute {
+    border-radius: 15px;
+    flex-shrink: 0 !important;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+    /* background: linear-gradient(to right, #00093c, #2d0b00); */
+  
+}
+
+ .card-Admin-custom-css img {
+        border-radius: 10px;
+        clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+        height: 15rem;
+        width: 100%;
+        object-fit: cover;
+ }
+
+.card-category {
+    font-weight: 500;
+    color: black;
+}
+
+.card-title{
+    font-weight:400;
+    color:black;
+}
+
+.edit-photo {
+    height: 15rem!important;
+    object-fit: cover!important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px!important;
+    border-radius: 10px!important;
+}
+
+/*Admin blogs card css*/

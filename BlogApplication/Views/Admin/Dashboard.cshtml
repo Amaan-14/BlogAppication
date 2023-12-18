@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+    var BlogCounts = ViewBag.BlogCount;
+    var UserCounts = ViewBag.UserCount;
+}
+
+<div class="container">
+    <div class="row d-flex justify-content-center mb-5">
+
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card card-Admin-dashboard-css " >
+                <div class="card-body  p-0">
+                    <h3 class="card-category" style="font-size:1.5rem;flex-shrink:0;">Total Blogs</h3>
+                    <p style="font-size:2rem;color:white">@BlogCounts</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 d-flex justify-content-center ">
+            <div class="card card-Admin-dashboard-css " >
+                <div class="card-body p-0 ">
+                    <h3 class="card-category " style="font-size:1.5rem;flex-shrink:0;">Total Categories</h3>
+                    <p style="font-size:2rem;color:white">@UserCounts</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card card-Admin-dashboard-qoute" style="text-align:center">
+                <div class="card-header" style=" background: rgb(207,159,255); background: radial-gradient(circle, rgba(207,159,255,1) 0%, rgba(142,36,247,1) 100%); color:black!important;">
+                    Quote
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p id="quoteText"  style="color:black;">A well-known quote, contained in a blockquote element.</p>
+                       
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const quotes = [
+        "Your devotion and care bring healing, comfort and hope.",
+        "The proud feeling when you are called a Doctor requires years and years of hard work.",
+        "Medicine is a science of uncertainty and the art of probability.",
+        "The good physician treats the disease; the great physician treats the patient who has the disease.",
+        "Learn as if you will live forever, live like you will die tomorrow.",
+        "Wherever the art of Medicine is loved, there is also a love of Humanity.",
+        "Observation, Reason, Human Understanding, Courage; these make the physician.",
+        "Always remember the privilege it is to be a physician.",
+        "People pay the doctor for his trouble; for his kindness they still remain in his debt.",
+        "Everything that irritates us about others can lead us to an understanding of ourselves.",
+        "There are only two sorts of doctors: those who practice with their brains, and those who practice with their tongues.",
+        "The aim of medicine is to prevent disease and prolong life; the ideal of medicine is to eliminate the need of a physician.",
+        "Out of your vulnerabilities will come your strength.",
+        "Trust yourself. You know more than you think you do.",
+        "Doctor is nothing more than a consolation for the spirit.",
+        "Drugs are not always necessary. Belief in recovery always is."
+    ];
+
+    let currentIndex = 0;
+
+    async function updateQuote() {
+        document.getElementById('quoteText').textContent = quotes[currentIndex];
+        currentIndex = (currentIndex + 1) % quotes.length;
+        await new Promise(resolve => setTimeout(resolve, 10000)); // Wait for 30 seconds
+        updateQuote(); // Call the function recursively
+    }
+
+    // Initial update
+    updateQuote();
+</script>

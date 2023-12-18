@@ -1,0 +1,84 @@
+/* Responsive adjustments */
+
+
+@media only screen and (min-width: 1200px) {
+    
+   
+   }
+
+@media only screen and (max-width: 1200px) {
+
+    /*header css*/
+    .twelve h1 {
+        font-size: 2.5rem;
+    }
+
+  }
+  
+  @media only screen and (max-width: 992px) {
+
+#particles-js{
+  height: 500px!important;
+}
+
+.h1-head{
+  font-size: 2rem!important;
+}
+
+.h2-head{
+  font-size: 1.5rem;
+}
+
+.h2-span{
+    font-size:1.5rem;
+}
+
+.txt-btn{
+  font-size: 20px;
+  max-width: 600px;
+}
+
+    /*header css*/
+    .twelve h1 {
+        font-size: 2rem;
+    }
+               
+}
+  
+@media only screen and (max-width: 576px) {
+
+/* ---header part--- */
+
+#particles-js{
+    height: 500px!important;
+}
+
+.h1-head{
+  top:20%;
+  font-size: 1.8rem!important;
+}
+
+.h2-head{
+  font-size: 1.5rem;
+  top: 35%;
+}
+
+.h2-span {
+        font-size: 1.5rem;
+        top: 35%;
+ }
+
+.txt-btn{
+  top: 45%;
+}
+
+/*header css*/
+ .twelve h1 { 
+        font-size: 1.5rem;
+    }
+
+
+ .card-Admin-custom-css {
+        width: 20rem !important;
+    }
+}

@@ -1,0 +1,119 @@
+﻿@model BlogApplication.Models.Blog
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm("Create","Blogs",FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+<div class="form-horizontal p-3 p-md-5 my-3" style="border-radius: 16px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+
+    <div class="d-flex justify-content-center mb-3">
+        <h3>Add Blog</h3>
+    </div>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group my-4">
+        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group my-4">
+        @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Photo1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Photo1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Photo1, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    <input type="file" name="Photo1" id=" Photo1" />
+
+    <div class="form-group my-4">
+        @Html.LabelFor(model => model.Description1, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.TextAreaFor(model => model.Description1, new { rows = "5", cols = "10", @class = "form-control" })
+            @*@Html.EditorFor(model => model.Description1, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Description1, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input type="file" name="Photo2" id="Photo2" />
+
+    <div class="form-group my-4">
+        @Html.LabelFor(model => model.Description2, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.TextAreaFor(model => model.Description2, new { rows = "5", cols = "10", @class = "form-control" })
+            @*@Html.EditorFor(model => model.Description2, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Description2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input type="file" name="Photo3" id="Photo3" />
+
+    <div class="form-group my-4">
+        @Html.LabelFor(model => model.Description3, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.TextAreaFor(model => model.Description3, new { rows = "5", cols = "10", @class = "form-control" })
+            @*@Html.EditorFor(model => model.Description3, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Description3, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input type="file" name="Photo4" id="Photo4" />
+
+    <div class="form-group my-4">
+        @Html.LabelFor(model => model.Description4, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.TextAreaFor(model => model.Description4, new { rows = "5", cols = "10", @class = "form-control" })
+            @*@Html.EditorFor(model => model.Description4, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Description4, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input type="file" name="Photo5" id="Photo5" />
+
+    <div class="form-group my-4">
+        @Html.LabelFor(model => model.Description5, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-12">
+            @Html.TextAreaFor(model => model.Description1, new { rows = "5", cols = "10", @class = "form-control" })
+            @*@Html.EditorFor(model => model.Description4, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.ValidationMessageFor(model => model.Description5, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group my-4">
+        <div class="col-md-offset-2 col-md-12">
+            <input type="submit" value="Create" onclick="disablebutton()" id="blogcreatebutton" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function disablebutton() {
+        var button = getElementById("blogcreatebutton");
+        button.disabled = true;
+    }
+</script>

@@ -1,0 +1,114 @@
+﻿@model BlogApplication.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categories.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description5)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

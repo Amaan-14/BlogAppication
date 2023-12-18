@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/LoginLayout.cshtml";
+}
+
+<style>
+    .login-page {
+        width: 320px;
+        padding: 4% 0 0;
+        margin: auto;
+        background-color: transparent;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .avatar {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .avatar img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 45px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 20px;
+    }
+
+        .form input[type="text"],
+        .form input[type="password"] {
+            font-family: 'Roboto', sans-serif;
+            outline: none;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form input[type="submit"] {
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            outline: none;
+            background-color: #2196F3;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+        }
+
+    .body-login {
+        background-color: transparent;
+        background-image: url("https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_960_720.png");
+        background-size: cover;
+    }
+    .loginbutton{
+      
+        cursor:pointer;
+    }
+</style>
+
+@*<form method="post" action="~/Account/Login">
+
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="text" class="form-control" id="Username" name="Username" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="Password" id="Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>*@
+
+
+<body class="body-login">
+    <div style="padding-top:25px; padding-bottom:25px;display:flex;justify-content:center;">
+        <div class="login-page">
+            <div class="avatar">
+                <img src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png" alt="Avatar">
+            </div>
+            <div class="form">
+                <h2>Login</h2>
+                <form method="post" action="~/Account/Login" id="loginForm">
+                    <input type="text" class="form-control" id="Username" name="Username" aria-describedby="username" placeholder="USERNAME" required>
+                    <input type="password" class="form-control" name="Password" id="Password" placeholder="Password" required>
+                    <div id="errorContainer" class="text-danger" style="color:red;font-size:14px; font-weight:500;margin-bottom:5px;"></div>
+                    <input type="submit" value="Login" class="loginbutton">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#loginForm').submit(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Account/Login',
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        if (data.success) {
+                            // Redirect to the specified URL
+                            window.location.replace(data.redirectUrl);
+                        } else {
+                            // Display login error
+                            var errorContainer = $('#errorContainer');
+                            errorContainer.text('Invalid username and password');
+
+                            // Clear the password field
+                            $('#Password').val('');
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        // Handle other errors if needed
+                        console.error('An error occurred:', errorThrown);
+                    }
+                });
+            });
+        });
+    </script>
+</body>

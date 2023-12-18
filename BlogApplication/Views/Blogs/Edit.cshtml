@@ -1,0 +1,219 @@
+﻿@model BlogApplication.Models.Blog
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm(new { id = "EditFormId" }))
+{
+   
+
+    <div class="form-horizontal p-3 p-md-5 my-3" style="border-radius: 16px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+
+        <div class="d-flex justify-content-center mb-3">
+            <h3>Edit Blog</h3>
+        </div>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group my-4">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+            @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+            <div class="row">
+
+                @if (Model.Photo1.Length > 1)
+                {
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                        <img src=".@Model.Photo1" style="height: 8rem !important; object-fit: cover !important; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important; border-radius: 10px !important;" />
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Change Photo 1", "ChangePhoto", new { id = Model.Id, Photo = 1 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Add Photo 1", "ChangePhoto", new { id = Model.Id, Photo = 1 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+            @Html.LabelFor(model => model.Description1, htmlAttributes: new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Description1, new { rows = "5", cols = "10", @class = "form-control" })
+                @*@Html.EditorFor(model => model.Description1, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Description1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+
+            <div class="row">
+
+                @if (Model.Photo2.Length > 1)
+                {
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                        <img src=".@Model.Photo2" style="height: 8rem !important; object-fit: cover !important; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important; border-radius: 10px !important;" />
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Change Photo 2", "ChangePhoto", new { id = Model.Id, Photo = 2 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Add Photo 2", "ChangePhoto", new { id = Model.Id, Photo = 2 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+
+
+            </div>
+
+
+        </div>
+
+        <div class="form-group my-4">
+            @Html.LabelFor(model => model.Description2, htmlAttributes: new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Description2, new { rows = "5", cols = "10", @class = "form-control" })
+                @*@Html.EditorFor(model => model.Description2, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Description2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+
+            <div class="row">
+
+
+                @if (Model.Photo3.Length > 1)
+                {
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                        <img src=".@Model.Photo3" style="height: 8rem !important; object-fit: cover !important; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important; border-radius: 10px !important;" />
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Change Photo 3", "ChangePhoto", new { id = Model.Id, Photo = 3 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Add Photo 3", "ChangePhoto", new { id = Model.Id, Photo = 3 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="form-group my-4">
+            @Html.LabelFor(model => model.Description3, htmlAttributes: new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Description3, new { rows = "5", cols = "10", @class = "form-control" })
+                @*@Html.EditorFor(model => model.Description3, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Description3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+
+            <div class="row">
+
+                @if (Model.Photo4.Length > 1)
+                {
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                        <img src=".@Model.Photo4" style="height: 8rem !important; object-fit: cover !important; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important; border-radius: 10px !important;" />
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Change Photo 4", "ChangePhoto", new { id = Model.Id, Photo = 4 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Add Photo 4", "ChangePhoto", new { id = Model.Id, Photo = 4 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="form-group my-4">
+            @Html.LabelFor(model => model.Description4, htmlAttributes: new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Description4, new { rows = "5", cols = "10", @class = "form-control" })
+                @*@Html.EditorFor(model => model.Description4, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Description4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+
+            <div class="row">
+
+                @if (Model.Photo5.Length > 1)
+                {
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center">
+                        <img src=".@Model.Photo5" style="height: 8rem !important; object-fit: cover !important; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important; border-radius: 10px !important;" />
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Change Photo 5", "ChangePhoto", new { id = Model.Id, Photo = 5 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 d-flex justify-content-center align-items-center pt-3">
+                        @Html.ActionLink("Add Photo 5", "ChangePhoto", new { id = Model.Id, Photo = 5 }, new { @class = "btn btn-dark" })
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="form-group my-4">
+            @Html.LabelFor(model => model.Description5, htmlAttributes: new { @class = "control-label col-md-12" })
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Description5, new { rows = "5", cols = "10", @class = "form-control" })
+                @*@Html.EditorFor(model => model.Description5, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Description5, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group my-4">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <button class="btn btn-danger" type="button" onclick="DeleteProduct(@Model.Id)">Delete</button>
+            </div>
+
+        </div>
+    </div>
+}
+
+
+
+
+
